@@ -1,0 +1,18 @@
+function add(x,y){
+	return x+y;
+}
+
+console.log(add(5,3));
+console.log(add("5","3"));
+console.log(add("fjkd","fjkd"));
+
+As all these scenarioes are valid, it's difficult to work on error handling in javascript. So, typescript was introduced to overcome
+this scenario.
+
+INSTALL typescript
+npm install -g typescript
+
+COMPILE
+tsc filename.ts
+
+After we use tsconfig.json file (which is similar to pom in java), we can compile using only 'tsc'
