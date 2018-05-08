@@ -1,5 +1,20 @@
-import { Calculator } from './utils/Calculator';
+import { Student } from "./models/Student";
+import { StudentService,IStudentService } from "./service/StudentService";
 
-var calc:Calculator = new Calculator();
+var studentService:IStudentService = new StudentService();
 
-console.log(calc.add(5,3));
+var student:Student = new Student();
+student.setId(1);
+student.setName("Akhilesh");
+student.setStatus(true);
+studentService.insert(student);
+
+student = new Student();
+student.setId(2);
+student.setName("Ram");
+student.setStatus(true);
+studentService.insert(student);
+
+studentService.getAll().forEach((s)=>{
+    console.log("%d %s %d", s.getId(), s.getName(),s.getStatus());
+});
